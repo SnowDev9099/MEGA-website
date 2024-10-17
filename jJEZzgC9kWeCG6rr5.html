@@ -1,0 +1,180 @@
+<html><head><base href="https://www.megaphones.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mega - The All-New mPhone</title>
+<style>
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  header {
+    background-color: #000;
+    padding: 10px 0;
+  }
+  nav {
+    text-align: center;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .hero {
+    text-align: center;
+    padding: 100px 0;
+  }
+  h1 {
+    font-size: 56px;
+    font-weight: 200;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 27px;
+    font-weight: 200;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  .cta {
+    display: inline-block;
+    background-color: #0070c9;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .feature {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  .feature img {
+    max-width: 100%;
+    height: auto;
+  }
+  .feature h3 {
+    font-size: 36px;
+    font-weight: 300;
+    margin: 20px 0;
+  }
+  .feature p {
+    font-size: 21px;
+    font-weight: 300;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .colors {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  #black {
+    background-color: #1f1f1f;
+  }
+  #silver {
+    background-color: #e4e4e2;
+  }
+  #blue {
+    background: linear-gradient(45deg, #4b6cb7, #182848);
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">mPhone</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#specs">Tech Specs</a></li>
+        <li><a href="#buy">Buy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="home" class="hero">
+      <h1>mPhone</h1>
+      <h2>Power meets innovation.</h2>
+      <a href="#buy" class="cta">Buy Now</a>
+    </section>
+
+    <section id="features" class="feature">
+      <img src="mphone_front.jpg" alt="mPhone front view, sleek design with edge-to-edge display" width="800" height="450">
+      <h3>Brilliant in every way.</h3>
+      <p>Experience the stunning 6.5-inch AMOLED display with 120Hz refresh rate.</p>
+    </section>
+
+    <section class="feature">
+      <img src="mphone_camera.jpg" alt="mPhone camera closeup, showing triple lens setup" width="800" height="450">
+      <h3>Capture every detail.</h3>
+      <p>50MP main camera with OIS, 12MP ultrawide, and 5MP macro for professional-grade photos.</p>
+    </section>
+
+    <section class="feature">
+      <img src="mphone_performance.jpg" alt="mPhone running multiple apps smoothly" width="800" height="450">
+      <h3>Powerful performance.</h3>
+      <p>Snapdragon 7 Gen 1 processor with 8GB RAM for seamless multitasking and gaming.</p>
+    </section>
+
+    <section class="feature">
+      <h3>Choose your style.</h3>
+      <p>Available in three stunning finishes.</p>
+      <div class="colors">
+        <div id="black" class="color-option" title="Matte Black"></div>
+        <div id="silver" class="color-option" title="Metallic Silver"></div>
+        <div id="blue" class="color-option" title="Gradient Blue"></div>
+      </div>
+      <img id="phone-image" src="mphone_black.jpg" alt="mPhone in Matte Black color" width="600" height="400">
+    </section>
+
+    <section id="specs" class="feature">
+      <h3>Tech Specs</h3>
+      <p>
+        6.5" AMOLED Full HD+ Display • Snapdragon 7 Gen 1 • 8GB RAM • 128GB Storage<br>
+        5000mAh Battery • 30W Fast Charging • Android 14 • IP68 Water Resistance
+      </p>
+    </section>
+
+    <section id="buy" class="feature">
+      <h3>Get your mPhone today</h3>
+      <p>Starting at $650</p>
+      <a href="/buy-now" class="cta">Buy Now</a>
+    </section>
+  </div>
+
+  <script>
+    const phoneImage = document.getElementById('phone-image');
+    const colorOptions = document.querySelectorAll('.color-option');
+
+    colorOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        const color = this.id;
+        phoneImage.src = `mphone_${color}.jpg`;
+        phoneImage.alt = `mPhone in ${color.charAt(0).toUpperCase() + color.slice(1)} color`;
+      });
+    });
+  </script>
+</body></html>
